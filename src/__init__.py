@@ -1,6 +1,7 @@
 # src/__init__.py
 
 import os
+import sys
 from flask import Flask, jsonify
 
 
@@ -11,6 +12,8 @@ app = Flask(__name__)
 app_settings = os.getenv('APP_SETTINGS')  # new
 app.config.from_object(app_settings)      # new
 
+
+# print(app.config, file=sys.stderr)
 
 @app.route("/")
 def main():
