@@ -1,6 +1,7 @@
 # manage.py
 
 from flask.cli import FlaskGroup
+
 from src import app
 
 
