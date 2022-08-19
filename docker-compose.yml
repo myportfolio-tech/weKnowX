@@ -6,9 +6,9 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    entrypoint: ['/usr/src/app/entrypoint.sh']  
+    entrypoint: ['/usr/src/app/entrypoint.sh']  # new
     volumes:
-      - .:/usr/src/app
+      - '.:/usr/src/app'
     ports:
       - 5004:5000
     environment:
@@ -20,7 +20,7 @@ services:
     depends_on:
       - api-db
 
-  api-db:  # new
+  api-db:
     build:
       context: ./src/db
       dockerfile: Dockerfile
